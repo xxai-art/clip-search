@@ -2,16 +2,21 @@
 
 from proc import tokenizer
 from onnx_load import onnx_load
+from norm import norm
 
 MODEL = onnx_load('txt')
 
 
-def txt2vec(li):
+def _txt2vec(li):
   text, attention_mask = tokenizer(li)
   text = text.numpy()
   attention_mask = attention_mask.numpy()
   output = MODEL.run(None, {'input': text, 'attention_mask': attention_mask})
   return output[0]
+
+
+def txt2vec(li):
+  return norm(_txt2vec(li))
 
 
 if __name__ == '__main__':
