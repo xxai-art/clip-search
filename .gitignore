@@ -1,0 +1,5 @@
+.direnv/python-*
+.envrc
+.tool-version
+__pycache__/
+model/
