@@ -16,7 +16,8 @@ def _txt2vec(li):
 
 
 def txt2vec(li):
-  return norm(_txt2vec(li))
+  vec = _txt2vec(li)
+  return norm(vec)
 
 
 if __name__ == '__main__':
