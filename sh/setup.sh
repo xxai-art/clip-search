@@ -9,7 +9,6 @@ if [ ! -f ".envrc" ]; then
 fi
 
 direnv allow
-source .envrc
 
 pip install -r ./requirements.txt
 
