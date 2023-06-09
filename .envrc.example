@@ -1,3 +1,6 @@
 layout python
 export MODEL=AltCLIP-XLMR-L-m18
+if [ -f ".env" ]; then
+dotenv
+fi
 
